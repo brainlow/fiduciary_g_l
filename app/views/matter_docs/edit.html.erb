@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @matter_doc.errors.any? %>
+  <% @matter_doc.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Matter Doc #<%= @matter_doc.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_matter_doc/<%= @matter_doc.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for document -->
+      <div class="form-group">
+        <label for="document" class="control-label">
+          Document
+        </label>
+
+        <input type="text" id="document" name="document" placeholder="Document" class="form-control" value="<%= @matter_doc.document %>">
+      </div>
+
+      <!-- Label and input for document_type -->
+      <div class="form-group">
+        <label for="document_type" class="control-label">
+          Document type
+        </label>
+
+        <input type="text" id="document_type" name="document_type" placeholder="Document type" class="form-control" value="<%= @matter_doc.document_type %>">
+      </div>
+
+      <!-- Label and input for matter_id -->
+      <div class="form-group">
+        <label for="matter_id" class="control-label">
+          Matter
+        </label>
+
+        <input type="text" id="matter_id" name="matter_id" placeholder="Matter" class="form-control" value="<%= @matter_doc.matter_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Matter Doc
+      </button>
+      or
+      <a href="/matter_docs/<%= @matter_doc.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

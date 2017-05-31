@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @asset_doc.errors.any? %>
+  <% @asset_doc.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Asset Doc</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_asset_doc" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for asset_id -->
+      <div class="form-group">
+        <label for="asset_id" class="control-label">
+          Asset
+        </label>
+
+        <input type="text" id="asset_id" name="asset_id" placeholder="Asset" class="form-control" value="<%= @asset_doc.asset_id %>">
+      </div>
+
+      <!-- Label and input for date -->
+      <div class="form-group">
+        <label for="date" class="control-label">
+          Date
+        </label>
+
+        <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="<%= @asset_doc.date %>">
+      </div>
+
+      <!-- Label and input for doc_type -->
+      <div class="form-group">
+        <label for="doc_type" class="control-label">
+          Doc type
+        </label>
+
+        <input type="text" id="doc_type" name="doc_type" placeholder="Doc type" class="form-control" value="<%= @asset_doc.doc_type %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Asset Doc
+      </button>
+      or
+      <a href="/asset_docs">Cancel</a>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,2 @@
+class MatterDoc < ApplicationRecord
+end

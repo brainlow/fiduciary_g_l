@@ -1,0 +1,82 @@
+<!-- Validation failure messages -->
+<% if @beneficiary.errors.any? %>
+  <% @beneficiary.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Beneficiary</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_beneficiary" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @beneficiary.name %>">
+      </div>
+
+      <!-- Label and input for address -->
+      <div class="form-group">
+        <label for="address" class="control-label">
+          Address
+        </label>
+
+        <input type="text" id="address" name="address" placeholder="Address" class="form-control" value="<%= @beneficiary.address %>">
+      </div>
+
+      <!-- Label and input for beneficiary_type -->
+      <div class="form-group">
+        <label for="beneficiary_type" class="control-label">
+          Beneficiary type
+        </label>
+
+        <input type="text" id="beneficiary_type" name="beneficiary_type" placeholder="Beneficiary type" class="form-control" value="<%= @beneficiary.beneficiary_type %>">
+      </div>
+
+      <!-- Label and input for residual_amount -->
+      <div class="form-group">
+        <label for="residual_amount" class="control-label">
+          Residual amount
+        </label>
+
+        <input type="text" id="residual_amount" name="residual_amount" placeholder="Residual amount" class="form-control" value="<%= @beneficiary.residual_amount %>">
+      </div>
+
+      <!-- Label and input for specific_amount -->
+      <div class="form-group">
+        <label for="specific_amount" class="control-label">
+          Specific amount
+        </label>
+
+        <input type="text" id="specific_amount" name="specific_amount" placeholder="Specific amount" class="form-control" value="<%= @beneficiary.specific_amount %>">
+      </div>
+
+      <!-- Label and input for matter_id -->
+      <div class="form-group">
+        <label for="matter_id" class="control-label">
+          Matter
+        </label>
+
+        <input type="text" id="matter_id" name="matter_id" placeholder="Matter" class="form-control" value="<%= @beneficiary.matter_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Beneficiary
+      </button>
+      or
+      <a href="/beneficiaries">Cancel</a>
+    </form>
+  </div>
+</div>

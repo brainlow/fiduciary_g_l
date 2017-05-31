@@ -1,0 +1,2 @@
+class AssetDoc < ApplicationRecord
+end

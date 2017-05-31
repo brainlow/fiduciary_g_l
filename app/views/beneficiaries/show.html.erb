@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h3>Beneficiary #<%= @beneficiary.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Name</dt>
+      <dd><%= @beneficiary.name %></dd>
+
+      <dt>Address</dt>
+      <dd><%= @beneficiary.address %></dd>
+
+      <dt>Beneficiary type</dt>
+      <dd><%= @beneficiary.beneficiary_type %></dd>
+
+      <dt>Residual amount</dt>
+      <dd><%= @beneficiary.residual_amount %></dd>
+
+      <dt>Specific amount</dt>
+      <dd><%= @beneficiary.specific_amount %></dd>
+
+      <dt>Matter</dt>
+      <dd><%= @beneficiary.matter_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/beneficiaries" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/beneficiaries/<%= @beneficiary.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_beneficiary/<%= @beneficiary.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+<!-- Validation failure messages -->
+<% if @transaction.errors.any? %>
+  <% @transaction.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Transaction</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_transaction" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for date -->
+      <div class="form-group">
+        <label for="date" class="control-label">
+          Date
+        </label>
+
+        <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="<%= @transaction.date %>">
+      </div>
+
+      <!-- Label and input for transaction_type -->
+      <div class="form-group">
+        <label for="transaction_type" class="control-label">
+          Transaction type
+        </label>
+
+        <input type="text" id="transaction_type" name="transaction_type" placeholder="Transaction type" class="form-control" value="<%= @transaction.transaction_type %>">
+      </div>
+
+      <!-- Label and input for amount -->
+      <div class="form-group">
+        <label for="amount" class="control-label">
+          Amount
+        </label>
+
+        <input type="text" id="amount" name="amount" placeholder="Amount" class="form-control" value="<%= @transaction.amount %>">
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <input type="text" id="description" name="description" placeholder="Description" class="form-control" value="<%= @transaction.description %>">
+      </div>
+
+      <!-- Label and input for account -->
+      <div class="form-group">
+        <label for="account" class="control-label">
+          Account
+        </label>
+
+        <input type="text" id="account" name="account" placeholder="Account" class="form-control" value="<%= @transaction.account %>">
+      </div>
+
+      <!-- Label and input for payee -->
+      <div class="form-group">
+        <label for="payee" class="control-label">
+          Payee
+        </label>
+
+        <input type="text" id="payee" name="payee" placeholder="Payee" class="form-control" value="<%= @transaction.payee %>">
+      </div>
+
+      <!-- Label and input for shares -->
+      <div class="form-group">
+        <label for="shares" class="control-label">
+          Shares
+        </label>
+
+        <input type="text" id="shares" name="shares" placeholder="Shares" class="form-control" value="<%= @transaction.shares %>">
+      </div>
+
+      <!-- Label and input for asset_id -->
+      <div class="form-group">
+        <label for="asset_id" class="control-label">
+          Asset
+        </label>
+
+        <input type="text" id="asset_id" name="asset_id" placeholder="Asset" class="form-control" value="<%= @transaction.asset_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Transaction
+      </button>
+      or
+      <a href="/transactions">Cancel</a>
+    </form>
+  </div>
+</div>

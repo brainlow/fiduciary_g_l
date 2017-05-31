@@ -1,0 +1,2 @@
+class Fiduciary < ApplicationRecord
+end

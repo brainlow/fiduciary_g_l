@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Fiduciary #<%= @fiduciary.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Fiduciary name</dt>
+      <dd><%= @fiduciary.fiduciary_name %></dd>
+
+      <dt>Fiduciary address</dt>
+      <dd><%= @fiduciary.fiduciary_address %></dd>
+
+      <dt>Matter</dt>
+      <dd><%= @fiduciary.matter_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/fiduciaries" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/fiduciaries/<%= @fiduciary.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_fiduciary/<%= @fiduciary.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

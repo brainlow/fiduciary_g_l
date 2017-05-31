@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Matter Doc #<%= @matter_doc.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Document</dt>
+      <dd><%= @matter_doc.document %></dd>
+
+      <dt>Document type</dt>
+      <dd><%= @matter_doc.document_type %></dd>
+
+      <dt>Matter</dt>
+      <dd><%= @matter_doc.matter_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/matter_docs" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/matter_docs/<%= @matter_doc.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_matter_doc/<%= @matter_doc.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
