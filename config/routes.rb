@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # Routes for the Fiduciary resource:
   # CREATE
   get "/fiduciaries/new", :controller => "fiduciaries", :action => "new"
@@ -101,7 +102,7 @@ Rails.application.routes.draw do
   get "/delete_asset/:id", :controller => "assets", :action => "destroy"
   #------------------------------
 
-  devise_for :users
+
   # Routes for the Transaction resource:
   # CREATE
   get "/transactions/new", :controller => "transactions", :action => "new"
