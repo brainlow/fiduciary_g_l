@@ -45,10 +45,10 @@
         <input type="text" id="fiduciary_number" name="fiduciary_number" placeholder="Fiduciary number" class="form-control" value="<%= @matter.fiduciary_number %>">
       </div>
 
-      <!-- Label and input for user_id -->
+      <!-- input for user_id -->
       <div class="form-group">
 
-        <input type="hidden" id="current_user.id" name="current_user.id" placeholder="current_user.id" class="form-control" value="<%= current_user.id %>">
+        <input type="hidden" id="user_id" name="user_id"  class="form-control" value="<%= current_user.id %>">
       </div>
 
       <button class="btn btn-success">
