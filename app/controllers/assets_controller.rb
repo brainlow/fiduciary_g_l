@@ -1,6 +1,7 @@
 class AssetsController < ApplicationController
   def index
-    @assets = Asset.all
+    @matter = Matter.find(params[:id])
+    @assets = @matter.assets
 
     render("assets/index.html.erb")
   end
@@ -12,6 +13,7 @@ class AssetsController < ApplicationController
   end
 
   def new
+    @matter = Matter.find(params[:id])
     @asset = Asset.new
 
     render("assets/new.html.erb")

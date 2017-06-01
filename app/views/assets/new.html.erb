@@ -38,11 +38,8 @@
 
       <!-- Label and input for matter_id -->
       <div class="form-group">
-        <label for="matter_id" class="control-label">
-          Matter
-        </label>
 
-        <input type="text" id="matter_id" name="matter_id" placeholder="Matter" class="form-control" value="<%= @asset.matter_id %>">
+        <input type="hidden" id="matter_id" name="matter_id" placeholder="Matter" class="form-control" value="<%= @matter.id %>">
       </div>
 
       <!-- Label and input for total_shares -->

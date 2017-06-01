@@ -1,7 +1,7 @@
 <div class="page-header">
   <h1>
-    Assets
-    <a href="/assets/new" class="btn btn-lg btn-success">New Asset</a>
+    Assets for The Estate of <%= @matter.name %>
+    <a href="/assets/new/<%= @matter.id %>" class="btn btn-lg btn-success">New Asset</a>
   </h1>
 </div>
 
@@ -11,7 +11,6 @@
       <tr>
         <th>Asset type</th>
         <th>Asset value</th>
-        <th>Matter</th>
         <th>Total shares</th>
         <th>Description</th>
         <th>Asset account</th>
@@ -22,12 +21,11 @@
       <% @assets.each do |asset| %>
       <tr>
         <td><%= asset.asset_type %></td>
-        <td><%= asset.asset_value %></td>
-        <td><%= asset.matter_id %></td>
+        <td><%= number_to_currency(asset.asset_value) %></td>
         <td><%= asset.total_shares %></td>
         <td><%= asset.description %></td>
         <td><%= asset.asset_account %></td>
-        <td><%= asset.market_value %></td>
+        <td><%= number_to_currency(asset.market_value) %></td>
         <td>
           <a href="/assets/<%= asset.id %>" class="btn btn-primary">Show</a>
           <a href="/assets/<%= asset.id %>/edit" class="btn btn-warning">Edit</a>

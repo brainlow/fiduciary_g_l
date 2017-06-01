@@ -87,11 +87,11 @@ Rails.application.routes.draw do
 
   # Routes for the Asset resource:
   # CREATE
-  get "/assets/new", :controller => "assets", :action => "new"
+  get "/assets/new/:id", :controller => "assets", :action => "new"
   post "/create_asset", :controller => "assets", :action => "create"
 
   # READ
-  get "/assets", :controller => "assets", :action => "index"
+  get "/matter/assets/:id", :controller => "assets", :action => "index"
   get "/assets/:id", :controller => "assets", :action => "show"
 
   # UPDATE
