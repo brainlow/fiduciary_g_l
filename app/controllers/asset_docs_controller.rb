@@ -1,6 +1,7 @@
 class AssetDocsController < ApplicationController
   def index
-    @asset_docs = AssetDoc.all
+    @asset = Asset.find(params[:id])
+    @asset_docs = @asset.asset_docs
 
     render("asset_docs/index.html.erb")
   end
@@ -12,6 +13,7 @@ class AssetDocsController < ApplicationController
   end
 
   def new
+    @asset = Asset.find(params[:id])
     @asset_doc = AssetDoc.new
 
     render("asset_docs/new.html.erb")

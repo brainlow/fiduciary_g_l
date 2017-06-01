@@ -28,7 +28,7 @@
         <td><%= number_to_currency(asset.market_value) %></td>
         <td>
           <a href="/assets/<%= asset.id %>/transactions" class="btn btn-primary">Transactions</a>
-          <a href="/assets/<%= asset.id %>" class="btn btn-primary">Documents</a>
+          <a href="/assets/asset_docs/<%= asset.id %>" class="btn btn-primary">Documents</a>
           <a href="/assets/<%= asset.id %>/edit" class="btn btn-warning">Edit</a>
           <a href="/delete_asset/<%= asset.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
         </td>

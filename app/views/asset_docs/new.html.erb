@@ -20,11 +20,8 @@
 
       <!-- Label and input for asset_id -->
       <div class="form-group">
-        <label for="asset_id" class="control-label">
-          Asset
-        </label>
 
-        <input type="text" id="asset_id" name="asset_id" placeholder="Asset" class="form-control" value="<%= @asset_doc.asset_id %>">
+        <input type="hidden" id="asset_id" name="asset_id" placeholder="Asset" class="form-control" value="<%= @asset.id %>">
       </div>
 
       <!-- Label and input for date -->
