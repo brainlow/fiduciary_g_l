@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170527193557) do
+ActiveRecord::Schema.define(version: 20170601142220) do
 
   create_table "asset_docs", force: :cascade do |t|
     t.integer  "asset_id"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170527193557) do
     t.string   "doc_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "document"
   end
 
   create_table "assets", force: :cascade do |t|
