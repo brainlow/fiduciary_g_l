@@ -1,6 +1,6 @@
 <div class="page-header">
   <h1>
-    Assets for The Estate of <%= @matter.name %>
+    Assets for The <%= @matter.matter_type %> of <%= @matter.name %>
     <a href="/assets/new/<%= @matter.id %>" class="btn btn-lg btn-success">New Asset</a>
   </h1>
 </div>
@@ -27,7 +27,8 @@
         <td><%= asset.asset_account %></td>
         <td><%= number_to_currency(asset.market_value) %></td>
         <td>
-          <a href="/assets/<%= asset.id %>" class="btn btn-primary">Show</a>
+          <a href="/assets/<%= asset.id %>/transactions" class="btn btn-primary">Transactions</a>
+          <a href="/assets/<%= asset.id %>" class="btn btn-primary">Documents</a>
           <a href="/assets/<%= asset.id %>/edit" class="btn btn-warning">Edit</a>
           <a href="/delete_asset/<%= asset.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
         </td>

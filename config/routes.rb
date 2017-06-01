@@ -105,11 +105,11 @@ Rails.application.routes.draw do
 
   # Routes for the Transaction resource:
   # CREATE
-  get "/transactions/new", :controller => "transactions", :action => "new"
+  get "/transactions/new/:id", :controller => "transactions", :action => "new"
   post "/create_transaction", :controller => "transactions", :action => "create"
 
   # READ
-  get "/transactions", :controller => "transactions", :action => "index"
+  get "/assets/:id/transactions", :controller => "transactions", :action => "index"
   get "/transactions/:id", :controller => "transactions", :action => "show"
 
   # UPDATE

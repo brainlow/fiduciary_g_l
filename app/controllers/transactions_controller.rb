@@ -1,6 +1,7 @@
 class TransactionsController < ApplicationController
   def index
-    @transactions = Transaction.all
+    @asset = Asset.find(params[:id])
+    @transactions = @asset.transactions
 
     render("transactions/index.html.erb")
   end
@@ -12,6 +13,7 @@ class TransactionsController < ApplicationController
   end
 
   def new
+    @asset = Asset.find(params[:id])
     @transaction = Transaction.new
 
     render("transactions/new.html.erb")
