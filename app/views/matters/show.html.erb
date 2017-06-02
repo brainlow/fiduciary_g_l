@@ -1,43 +1,53 @@
+<!DOCTYPE html>
 <div class="page-header">
   <h3>The <%= @matter.matter_type %> of <%= @matter.name %></h3>
 </div>
 
 <div class="row">
-  <div class="col-md-12 mb-2">
+  <div class="col-sm-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Name</dt>
       <dd><%= @matter.name %></dd>
 
-      <dt>Matter type</dt>
+      <dt>Matter Type</dt>
       <dd><%= @matter.matter_type %></dd>
 
-      <dt>Fiduciary number</dt>
+      <dt>Fiduciary #</dt>
       <dd><%= @matter.fiduciary_number %></dd>
 
-      <dt>Estate Value</dt>
+      <dt>Inventory Value</dt>
       <dd><%= number_to_currency(@matter.assets.sum(:asset_value)) %></dd>
 
     </dl>
+  </div>
+  <div class="col-sm-12 mb-2">
 
-    <div class="btn-group btn-group-justified">
-      <a href="/matter/assets/<%= @matter.id %>" class="btn btn-danger" rel="nofollow">
-        Assets
-      </a>
-      <a href="/matter/assets/<%= @matter.id %>" class="btn btn-danger" rel="nofollow">
-        Fiduciaries
-      </a>
-      <a href="/matter/assets/<%= @matter.id %>" class="btn btn-danger" rel="nofollow">
-        Matter Documents
-      </a>
-      <a href="/matters" class="btn btn-primary">
-        Back
-      </a>
-      <a href="/matters/<%= @matter.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_matter/<%= @matter.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
-    </div>
+    <a href="/matter/assets/<%= @matter.id %>" class="btn btn-sq btn-info" rel="nofollow"> <i class="fa fa-usd" aria-hidden="true"></i>
+      <br>  Assets
+    </a>
+    <a href="/matter/assets/<%= @matter.id %>" class="btn btn-sq btn-info" rel="nofollow"> <i class="fa fa-users" aria-hidden="true"></i>
+      <br>  Fiduciaries
+    </a>
+    <a href="/matter/assets/<%= @matter.id %>" class="btn btn-sq btn-info" rel="nofollow"> <i class="fa fa-file" aria-hidden="true"></i>
+      <br>  Matter Documents
+    </a>
+
+  </div>
+</div>
+<div class="row">
+
+  <hr class="featurette-divider">
+
+  <div class="btn-group btn-group-justified">
+
+    <a href="/matters" class="btn btn-primary">
+      Back
+    </a>
+    <a href="/matters/<%= @matter.id %>/edit" class="btn btn-warning">
+      Edit
+    </a>
+    <a href="/delete_matter/<%= @matter.id %>" class="btn btn-danger" rel="nofollow">
+      Delete
+    </a>
   </div>
 </div>

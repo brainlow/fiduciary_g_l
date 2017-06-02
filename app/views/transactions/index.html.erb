@@ -31,7 +31,7 @@
         <td><%= transaction.shares %></td>
         <td><%= transaction.asset_id %></td>
         <td>
-          <a href="/transactions/<%= transaction.id %>" class="btn btn-primary">Show</a>
+          <a href="/transactions/<%= transaction.id %>" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Show</a>
           <a href="/matter/assets/<%= transaction.asset_id %>" class="btn btn-primary">Back</a>
           <a href="/transactions/<%= transaction.id %>/edit" class="btn btn-warning">Edit</a>
           <a href="/delete_transaction/<%= transaction.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
