@@ -1,6 +1,7 @@
 class MatterDocsController < ApplicationController
   def index
-    @matter_docs = MatterDoc.all
+    @matter = Matter.find(params[:id])
+    @matter_docs = @matter.matter_docs
 
     render("matter_docs/index.html.erb")
   end
@@ -12,6 +13,7 @@ class MatterDocsController < ApplicationController
   end
 
   def new
+    @matter = Matter.find(params[:id])
     @matter_doc = MatterDoc.new
 
     render("matter_docs/new.html.erb")

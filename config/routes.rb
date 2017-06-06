@@ -70,7 +70,7 @@ Rails.application.routes.draw do
 
   # Routes for the Matter_doc resource:
   # CREATE
-  get "/matter_docs/new", :controller => "matter_docs", :action => "new"
+  get "/matter_docs/new/:id", :controller => "matter_docs", :action => "new"
   post "/create_matter_doc", :controller => "matter_docs", :action => "create"
 
   # READ
