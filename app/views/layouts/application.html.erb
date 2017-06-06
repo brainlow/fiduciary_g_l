@@ -8,10 +8,39 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   <style>
-    /* Only necessary if you are using navbar-fixed-top */
-    body {
-      padding-top: 60px;
+  /* Only necessary if you are using navbar-fixed-top */
+  body {
+    padding-top: 60px;
+  }
+
+  .carousel {
+    height: 500px;
+    margin-bottom: 60px;
+  }
+  /* Since positioning the image, we need to help out the caption */
+  .carousel-caption {
+    z-index: 10;
+  }
+  /* Declare heights because of positioning of img element */
+  .carousel .item {
+    width: 100%;
+    height: 500px;
+    background-color: #777;
+  }
+  .carousel-inner > .item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px;
+  }
+  @media (min-width: 768px) {
+    .carousel-caption p {
+      margin-bottom: 20px;
+      font-size: 21px;
+      line-height: 1.4;
     }
+  }
   </style>
 
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -19,7 +48,6 @@
   <%= csrf_meta_tags %>
 
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 </head>
@@ -40,37 +68,37 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <% if current_user != nil %>
-            <li><a href="/matters"><i class="fa fa-database" aria-hidden="true"></i> My Matters</a></li>
-            <% end %>
+          <% if current_user != nil %>
+          <li><a href="/matters"><i class="fa fa-database" aria-hidden="true"></i> My Matters</a></li>
+          <% end %>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-            <% if current_user != nil %>
-            <li><a href="/users/edit"><i class="fa fa-user-o" aria-hidden="true"></i><%= current_user.email %></a></li>
-            <li><a href="/users/sign_out" data-method="delete" rel="nofollow"><i class="fa fa-fw fa-sign-out"></i> Sign Out</a></li>
-            <% else %>
-            <li><a href="/users/sign_in">Sign In</a></li>
-            <li><a href="/users/sign_up" data-method="delete" rel="nofollow">Sign up</a></li>
-            <% end  %>
-          </ul>
+          <% if current_user != nil %>
+          <li><a href="/users/edit"><i class="fa fa-user-o" aria-hidden="true"></i><%= current_user.email %></a></li>
+          <li><a href="/users/sign_out" data-method="delete" rel="nofollow"><i class="fa fa-fw fa-sign-out"></i> Sign Out</a></li>
+          <% else %>
+          <li><a href="/users/sign_in">Sign In</a></li>
+          <li><a href="/users/sign_up" data-method="delete" rel="nofollow">Sign up</a></li>
+          <% end  %>
+        </ul>
       </div><!-- /.navbar-collapse -->
     </div>
   </nav>
 
   <div class="container">
     <% if notice.present? %>
-      <div class="alert alert-dismissable alert-success">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <%= notice %>
-      </div>
+    <div class="alert alert-dismissable alert-success">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= notice %>
+    </div>
     <% end %>
 
     <% if alert.present? %>
-      <div class="alert alert-dismissable alert-warning">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <%= alert %>
-      </div>
+    <div class="alert alert-dismissable alert-warning">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= alert %>
+    </div>
     <% end %>
 
     <%= yield %>
