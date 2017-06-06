@@ -22,6 +22,7 @@ class AssetDocsController < ApplicationController
   def create
     @asset_doc = AssetDoc.new
 
+    @asset_doc.document = params[:document]
     @asset_doc.asset_id = params[:asset_id]
     @asset_doc.date = params[:date]
     @asset_doc.doc_type = params[:doc_type]
