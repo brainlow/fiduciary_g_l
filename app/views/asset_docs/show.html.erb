@@ -2,30 +2,49 @@
   <h3>Asset Doc #<%= @asset_doc.id %></h3>
 </div>
 
-<div class="row">
-  <div class="col-md-12 mb-2">
-    <dl class="dl-horizontal">
-      <dt>Asset</dt>
-      <dd><iframe src="<%= @asset_doc.document %>" width="600" height="780"></iframe></dd>
+<div class="container">
 
-      <dt>Date</dt>
-      <dd><%= @asset_doc.date %></dd>
+  <div class="row">
+    <div class="span3">
+      <div class="mycontent-left">
+        <dt>Date</dt>
+        <dd><%= @asset_doc.date %></dd>
 
-      <dt>Doc type</dt>
-      <dd><%= @asset_doc.doc_type %></dd>
+        <dt>Doc type</dt>
+        <dd><%= @asset_doc.doc_type %></dd>
 
-    </dl>
+        <dd><iframe src="<%= @asset_doc.document %>" width="600" height="780"></iframe></dd>
 
-    <div class="btn-group btn-group-justified">
-      <a href="/asset_docs" class="btn btn-primary">
-        Back
-      </a>
-      <a href="/asset_docs/<%= @asset_doc.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_asset_doc/<%= @asset_doc.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      </dl>
+
+      <div class="btn-group btn-group-justified">
+        <a href="/asset_docs" class="btn btn-primary">
+          Back
+        </a>
+        <a href="/asset_docs/<%= @asset_doc.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_asset_doc/<%= @asset_doc.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="span8">
+    <div class="mycontent-right">
+      <table class="table">
+        <tr>
+          <th>Date</th>
+          <th>Transaction type</th>
+          <th>Amount</th>
+          <th>Description</th>
+          <th>Account</th>
+          <th>Payee</th>
+          <th>Shares</th>
+          <th>Actions</th>
+        </tr>
+      </div>
     </div>
   </div>
 </div>
