@@ -1,6 +1,7 @@
 class FiduciariesController < ApplicationController
   def index
-    @fiduciaries = Fiduciary.all
+    @matter = Matter.find(params[:id])
+    @fiduciaries = @matter.fiduciaries
 
     render("fiduciaries/index.html.erb")
   end
@@ -12,7 +13,8 @@ class FiduciariesController < ApplicationController
   end
 
   def new
-    @fiduciary = Fiduciary.new
+    @matter = Matter.find(params[:id])
+    @fiduciaries = Fiduciary.new
 
     render("fiduciaries/new.html.erb")
   end

@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   # Routes for the Fiduciary resource:
   # CREATE
-  get "/fiduciaries/new", :controller => "fiduciaries", :action => "new"
+  get "/fiduciaries/new/:id", :controller => "fiduciaries", :action => "new"
   post "/create_fiduciary", :controller => "fiduciaries", :action => "create"
 
   # READ
-  get "/fiduciaries", :controller => "fiduciaries", :action => "index"
+  get "/matters/:id/fiduciaries/", :controller => "fiduciaries", :action => "index"
   get "/fiduciaries/:id", :controller => "fiduciaries", :action => "show"
 
   # UPDATE
@@ -74,7 +74,7 @@ Rails.application.routes.draw do
   post "/create_matter_doc", :controller => "matter_docs", :action => "create"
 
   # READ
-  get "/matter_docs", :controller => "matter_docs", :action => "index"
+  get "/matter/:id/matter_docs", :controller => "matter_docs", :action => "index"
   get "/matter_docs/:id", :controller => "matter_docs", :action => "show"
 
   # UPDATE
