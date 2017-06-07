@@ -14,7 +14,7 @@ class FiduciariesController < ApplicationController
 
   def new
     @matter = Matter.find(params[:id])
-    @fiduciaries = Fiduciary.new
+    @fiduciary = Fiduciary.new
 
     render("fiduciaries/new.html.erb")
   end
@@ -29,7 +29,7 @@ class FiduciariesController < ApplicationController
     save_status = @fiduciary.save
 
     if save_status == true
-      redirect_to("/fiduciaries/#{@fiduciary.id}", :notice => "Fiduciary created successfully.")
+      redirect_to("matters/#{@fiduciary.matter_id}/fiduciaries/", :notice => "Fiduciary created successfully.")
     else
       render("fiduciaries/new.html.erb")
     end
