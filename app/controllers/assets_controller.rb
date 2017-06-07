@@ -33,7 +33,7 @@ class AssetsController < ApplicationController
     save_status = @asset.save
 
     if save_status == true
-      redirect_to("/assets/#{@asset.id}", :notice => "Asset created successfully.")
+      redirect_to("/matter/assets/#{@asset.matter_id}", :notice => "Asset created successfully.")
     else
       render("assets/new.html.erb")
     end
@@ -59,7 +59,7 @@ class AssetsController < ApplicationController
     save_status = @asset.save
 
     if save_status == true
-      redirect_to("/assets/#{@asset.id}", :notice => "Asset updated successfully.")
+      redirect_to("/matter/assets/#{@asset.matter_id}}", :notice => "Asset updated successfully.")
     else
       render("assets/edit.html.erb")
     end
