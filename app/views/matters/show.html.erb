@@ -20,16 +20,20 @@
 
     </dl>
   </div>
-  <div class="col-sm-12 mb-2">
 
-    <a href="/matter/assets/<%= @matter.id %>" class="btn btn-sq btn-info" rel="nofollow"> <i class="fa fa-usd" aria-hidden="true"></i>
+  <div class="btn-group">
+
+    <a href="/matter/assets/<%= @matter.id %>" class="btn btn-info" rel="nofollow"> <i class="fa fa-usd" aria-hidden="true"></i>
       <br>  Assets
     </a>
-    <a href="/matters/<%= @matter.id %>/fiduciaries/" class="btn btn-sq btn-info" rel="nofollow"> <i class="fa fa-users" aria-hidden="true"></i>
+    <a href="/matters/<%= @matter.id %>/fiduciaries/" class="btn btn-info" rel="nofollow"> <i class="fa fa-users" aria-hidden="true"></i>
       <br>  Fiduciaries
     </a>
-    <a href="/matter/<%= @matter.id %>/matter_docs" class="btn btn-sq btn-info" rel="nofollow"> <i class="fa fa-file" aria-hidden="true"></i>
+    <a href="/matter/<%= @matter.id %>/matter_docs" class="btn btn-info" rel="nofollow"> <i class="fa fa-file" aria-hidden="true"></i>
       <br>  Matter Documents
+    </a>
+    <a href="/matters/reports/<%= @matter.id %>" class="btn btn-info" rel="nofollow"> <i class="fa fa-file-text-o" aria-hidden="true"></i>
+      <br>  Generate a Report
     </a>
 
   </div>

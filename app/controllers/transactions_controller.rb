@@ -34,7 +34,7 @@ class TransactionsController < ApplicationController
     save_status = @transaction.save
 
     if save_status == true
-      redirect_to("/transactions/#{@transaction.id}", :notice => "Transaction created successfully.")
+      redirect_to("/assets/#{@transaction.asset_id}/transactions/", :notice => "Transaction created successfully.")
     else
       render("transactions/new.html.erb")
     end

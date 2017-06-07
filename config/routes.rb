@@ -120,5 +120,7 @@ Rails.application.routes.draw do
   get "/delete_transaction/:id", :controller => "transactions", :action => "destroy"
   #------------------------------
   root to: "home#index"
+
+  get "/matters/reports/:id", :controller => "reports", :action => "report"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

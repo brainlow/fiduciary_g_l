@@ -1,0 +1,29 @@
+
+
+<%= @assets.each do |asset| %>
+<h2><%= asset.asset_account %>, <%= asset.description %></h2>
+
+<%= @transactions.each do |transaction| %>
+<div class="col-md-12">
+  <table class="table table-striped table-hover table-responsive">
+    <tr align="center">
+      <th>Date</th>
+      <th>Transaction type</th>
+      <th>Amount</th>
+      <th>Description</th>
+      <th>Account</th>
+      <th>Payee</th>
+      <th>Shares</th>
+      <th>Actions</th>
+    </tr>
+    <tr>
+      <td><%= transaction.date.to_formatted_s(:long) %></td>
+      <td><%= transaction.transaction_type %></td>
+      <td><%= number_to_currency(transaction.amount) %></td>
+      <td><%= transaction.description.titleize %></td>
+      <td ><%= transaction.account %></td>
+      <td><%= transaction.payee %></td>
+      <td><%= transaction.shares %></td>
+      <td>
+        <% end  %>
+        <% end %>
