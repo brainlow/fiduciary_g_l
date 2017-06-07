@@ -1,9 +1,9 @@
 
 
-<%= @assets.each do |asset| %>
+<% @assets.each do |asset| %>
 <h2><%= asset.asset_account %>, <%= asset.description %></h2>
 
-<%= @transactions.each do |transaction| %>
+<% asset.transactions.each do |transaction| %>
 <div class="col-md-12">
   <table class="table table-striped table-hover table-responsive">
     <tr align="center">

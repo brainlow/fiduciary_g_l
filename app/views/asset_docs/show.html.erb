@@ -5,7 +5,7 @@
 <div class="container">
 
   <div class="row">
-    <div class="span6">
+    <div class="col-md-6">
       <div class="mycontent-left">
         <dt>Date</dt>
         <dd><%= @asset_doc.date %></dd>
@@ -13,7 +13,7 @@
         <dt>Doc type</dt>
         <dd><%= @asset_doc.doc_type %></dd>
 
-        <dd><iframe src="<%= @asset_doc.document %>" width="600" height="780" align="left"></iframe></dd>
+        <dd><iframe src="<%= @asset_doc.document %>" align="left" width="400" height="500"></iframe></dd>
 
       </dl>
 
@@ -31,18 +31,18 @@
     </div>
   </div>
 
-  <div class="span6">
+  <div class="col-md-6">
     <div class="mycontent-right">
       <table class="table table-responsive" align="right">
         <tr>
-          <th>Date</th>
-          <th>Transaction type</th>
-          <th>Amount</th>
-          <th>Description</th>
-          <th>Account</th>
-          <th>Payee</th>
-          <th>Shares</th>
-          <th>Actions</th>
+          <li>Date</li>
+          <li>Transaction type</li>
+          <li>Amount</li>
+          <li>Description</li>
+          <li>Account</li>
+          <li>Payee</li>
+          <li>Shares</li>
+          <li>Actions</li>
         </tr>
       </div>
     </div>

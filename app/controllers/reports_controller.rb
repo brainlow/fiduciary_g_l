@@ -1,8 +1,7 @@
 class ReportsController < ApplicationController
   def report
     @matter = Matter.find(params[:id])
-    @asset = @matter.assets
-    @transaction = @asset.transactions
+    @assets = @matter.assets
 
     render("matters/report.html.erb")
   end
