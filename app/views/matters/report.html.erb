@@ -1,37 +1,51 @@
 <div class="panel panel-default">
-  <h1>Accounting for The <%= @matter.matter_type  %> of <%= @matter.name  %></h1>
+  <div class="panel panel-heading">Accounting for The <%= @matter.matter_type  %> of <%= @matter.name  %></div>
 
 
-  <% @assets.each do |asset| %>
-  <div class="panel-heading"> <%= asset.asset_account %>, <%= asset.description %>  </div>
-  <div class="panel-body">
-    Inventory Value: <%= number_to_currency(asset.asset_value)%>, Market Value:<%=  number_to_currency(asset.market_value) %>
-  </div>
   <div class="panel-body">
     <div class="col-md-12">
       <table class="table table-striped table-hover table-responsive">
         <tr align="center">
-          <th>Date</th>
-          <th>Transaction type</th>
-          <th>Amount</th>
-          <th>Description</th>
           <th>Account</th>
-          <th>Payee</th>
-          <th>Shares</th>
+          <th>Description</th>
+          <th>Inventory Value</th>
+          <th>Market Value</th>
         </tr>
+        <% @assets.each do |asset| %>
         <tr>
-          <% asset.transactions.each do |transaction| %>
-          <td><%= transaction.date.to_formatted_s(:long) %></td>
-          <td><%= transaction.transaction_type %></td>
-          <td><%= number_to_currency(transaction.amount) %></td>
-          <td><%= transaction.description.titleize %></td>
-          <td ><%= transaction.account %></td>
-          <td><%= transaction.payee %></td>
-          <td><%= transaction.shares %></td>
-          <td>
-          </tr>
-          <% end  %>
-          <% end %>
-        </div>
+          <td>  <%= asset.asset_account %></td>
+          <td><%= asset.description %></td>
+          <td><%= number_to_currency(asset.asset_value)%></td>
+          <td><%=  number_to_currency(asset.market_value) %></td>
+        </tr>
       </div>
+      <% end %>
     </div>
+
+    <div class="panel-body">
+      <div class="col-md-12">
+        <table class="table table-striped table-hover table-responsive">
+          <tr align="center">
+            <th>Date</th>
+            <th>Transaction type</th>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Payee</th>
+            <th>Shares</th>
+          </tr>
+          <% @assets.each do |asset| %>
+          <% asset.transactions.each do |transaction| %>
+          <tr>
+            <td><%= transaction.date.to_formatted_s(:long) %></td>
+            <td><%= transaction.transaction_type %></td>
+            <td><%= number_to_currency(transaction.amount) %></td>
+            <td><%= transaction.description.titleize %></td>
+            <td><%= transaction.payee %></td>
+            <td><%= transaction.shares %></td>
+            <td>
+            </tr>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
