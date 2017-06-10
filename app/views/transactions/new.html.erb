@@ -24,7 +24,7 @@
           Date
         </label>
 
-        <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="<%= @transaction.date %>">
+        <input type="date" id="date" name="date" placeholder="Date" class="form-control" value="<%= @transaction.date %>">
       </div>
 
       <!-- Label and input for transaction_type -->
@@ -91,7 +91,7 @@
         Create Transaction
       </button>
       or
-      <a href="/transactions">Cancel</a>
+      <a href="/assets/<%= @asset.id %>/transactions">Cancel</a>
     </form>
   </div>
 </div>

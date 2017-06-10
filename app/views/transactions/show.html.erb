@@ -26,13 +26,10 @@
       <dt>Shares</dt>
       <dd><%= @transaction.shares %></dd>
 
-      <dt>Asset</dt>
-      <dd><%= @transaction.asset_id %></dd>
-
     </dl>
 
     <div class="btn-group btn-group-justified">
-      <a href="/assets/<%= @transaction.id %>/transactions" class="btn btn-primary">
+      <a href="/assets/<%= @transaction.asset_id %>/transactions" class="btn btn-primary">
         Back
       </a>
       <a href="/transactions/<%= @transaction.id %>/edit" class="btn btn-warning">
