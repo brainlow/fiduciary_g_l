@@ -8,6 +8,10 @@ class AssetDocsController < ApplicationController
 
   def show
     @asset_doc = AssetDoc.find(params[:id])
+    @asset = Asset.find_by({:id => @asset_doc.asset_id})
+    @matter = Matter.find_by({:id => @asset.matter_id})
+
+
 
     render("asset_docs/show.html.erb")
   end

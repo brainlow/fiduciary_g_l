@@ -1,6 +1,11 @@
 <div class="page-header">
+  <ul class="breadcrumb">
+    <li><a href="/matters">My Matters</a></li>
+    <li><a href="/matters/<%= @matter.id %>"><%= @matter.name %></a></li>
+    <li class="active">Matter Docs</li>
+  </ul>
   <h1>
-    Matter docs
+    Matter Docs
     <a href="/matter_docs/new/<%= @matter.id %>" class="btn btn-lg btn-success">New Matter doc</a>
   </h1>
 </div>
