@@ -1,6 +1,6 @@
 class MattersController < ApplicationController
   def index
-    @matters = Matter.all
+    @matters = current_user.matters
 
     render("matters/index.html.erb")
   end

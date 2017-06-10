@@ -10,6 +10,8 @@ class AssetDocsController < ApplicationController
     @asset_doc = AssetDoc.find(params[:id])
     @asset = Asset.find_by({:id => @asset_doc.asset_id})
     @matter = Matter.find_by({:id => @asset.matter_id})
+    @transaction = Transaction.new
+    
 
 
 

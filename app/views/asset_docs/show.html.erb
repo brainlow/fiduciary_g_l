@@ -10,7 +10,6 @@
 
 <div class="container">
 
-
   <div class="row">
     <div class="col-md-6">
       <div class="mycontent-left">
@@ -37,20 +36,88 @@
       </div>
     </div>
   </div>
-
   <div class="col-md-6">
     <div class="mycontent-right">
-      <table class="table table-responsive" align="right">
-        <tr>
-          <li>Date</li>
-          <li>Transaction type</li>
-          <li>Amount</li>
-          <li>Description</li>
-          <li>Account</li>
-          <li>Payee</li>
-          <li>Shares</li>
-          <li>Actions</li>
-        </tr>
+      <div class="row">
+        <div class="col-md-12">
+          <form action="/create_transaction" method="post">
+            <!-- Hidden input for authenticity token to protect from forgery -->
+            <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+            <!-- Label and input for date -->
+            <div class="form-group">
+              <label for="date" class="control-label">
+                Date
+              </label>
+
+              <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="<%= @transaction.date %>">
+            </div>
+
+            <!-- Label and input for transaction_type -->
+            <div class="form-group">
+              <label for="transaction_type" class="control-label">
+                Transaction type
+              </label>
+
+              <input type="text" id="transaction_type" name="transaction_type" placeholder="Transaction type" class="form-control" value="<%= @transaction.transaction_type %>">
+            </div>
+
+            <!-- Label and input for amount -->
+            <div class="form-group">
+              <label for="amount" class="control-label">
+                Amount
+              </label>
+
+              <input type="text" id="amount" name="amount" placeholder="Amount" class="form-control" value="<%= @transaction.amount %>">
+            </div>
+
+            <!-- Label and input for description -->
+            <div class="form-group">
+              <label for="description" class="control-label">
+                Description
+              </label>
+
+              <input type="text" id="description" name="description" placeholder="Description" class="form-control" value="<%= @transaction.description %>">
+            </div>
+
+            <!-- Label and input for account -->
+            <div class="form-group">
+
+              <input type="hidden" id="account" name="account" placeholder="Account" class="form-control" value="<%= @asset.asset_account %>">
+            </div>
+
+            <!-- Label and input for payee -->
+            <div class="form-group">
+              <label for="payee" class="control-label">
+                Payee
+              </label>
+
+              <input type="text" id="payee" name="payee" placeholder="Payee" class="form-control" value="<%= @transaction.payee %>">
+            </div>
+
+            <!-- Label and input for shares -->
+            <% if @asset.asset_type == "Stock"  %>
+
+            <div class="form-group">
+              <label for="shares" class="control-label">
+                Shares
+              </label>
+
+              <input type="text" id="shares" name="shares" placeholder="Shares" class="form-control" value="<%= @transaction.shares %>">
+            </div>
+
+            <% end  %>
+            <!-- Label and input for asset_id -->
+            <div class="form-group">
+
+              <input type="hidden" id="asset_id" name="asset_id" placeholder="Asset" class="form-control" value="<%= @asset.id %>">
+            </div>
+
+            <button class="btn btn-success">
+              Create Transaction
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
