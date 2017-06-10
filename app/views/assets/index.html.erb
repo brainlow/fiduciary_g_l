@@ -1,4 +1,9 @@
 <div class="page-header">
+  <ul class="breadcrumb">
+    <li><a href="/matters">My Matters</a></li>
+    <li><a href="/matters/<%= @matter.id %>"><%= @matter.name %></a></li>
+    <li class="active">Assets</li>
+  </ul>
   <h1>
     Assets for The <%= @matter.matter_type %> of <%= @matter.name %>
     <a href="/assets/new/<%= @matter.id %>" class="btn btn-lg btn-success"> <i class="fa fa-plus" aria-hidden="true"></i> New Asset</a>

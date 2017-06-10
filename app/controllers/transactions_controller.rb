@@ -2,7 +2,7 @@ class TransactionsController < ApplicationController
   def index
     @asset = Asset.find(params[:id])
     @transactions = @asset.transactions
-
+    @matter = Matter.find_by({:id => @asset.matter_id})
     render("transactions/index.html.erb")
   end
 
